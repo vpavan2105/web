@@ -1,0 +1,24 @@
+{%extends "items/base.html"%}
+
+{%block content2%}
+
+
+{%if not user.is_authenticated%}
+
+
+    <div class="form-style">
+    <form method='POST' action='.'>
+        <center style="text-decoration-line:overline underline;margin-top:5px;font-size:20px">---Registration Page---</center>
+       {%csrf_token%}
+       {{user.as_p}}
+       <button class="button" type='submit'>Register</button>
+    </form>
+    
+    </div>
+    
+    <p class="line">if you have registered, click here to <a href="/login/" class="links">LOGIN</a></p> 
+{%else%}
+
+    <p class="line">you are already registered do you want to <a href='/logout/' class="links">Logout</a></p>
+{%endif%}    
+{%endblock content2%}

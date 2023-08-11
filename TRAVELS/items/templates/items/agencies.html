@@ -1,0 +1,38 @@
+{%extends 'items/base.html'%}
+{%block content2%}
+{%load static%}
+
+<div class="explore">
+<div class="explore-items">
+    
+     {% for x in agenci %}
+    <div>  
+        <div class="agency">
+            {% if x.id == 1 %}
+                <img src="{% static 'items/company4.jpeg' %}"  width="100%">
+                <p style="padding:10px">Company Name:{{x.agency}}<br>Rating:{{x.rating}}</p>
+            {% elif x.id == 2 %}
+                <img src="{% static 'items/company2.jpeg' %}" width="100%" >
+                <p style="padding:10px">Company Name:{{x.agency}}<br>Rating:{{x.rating}}</p>
+            {% elif x.id == 3 %}
+                <img src="{% static 'items/company3.jpeg' %}" width="100%">
+                <p style="padding:10px">Company Name:{{x.agency}}<br>Rating:{{x.rating}}</p>
+            {% endif %} 
+        </div>
+            {% for y in des %}
+                {% if y.agency_id == x.id %}
+                    <li><a class="destination" href="/route/{{y.id}}">tour plan-{{y.id}}</a></li>
+                    <br>
+                {% endif %}
+            {% endfor %}
+    </div>
+        {% endfor %}
+    
+</div>
+<div>
+    <p>click on the place for details</p>
+    <img src="{% static 'items/picture.jpg' %}" width="100%" height="50%">
+</div>
+<a class="links"  href=/booking/>book a tour</a>
+<p><a href='/' class="links">Go Back</a></p>
+{%endblock content2%}

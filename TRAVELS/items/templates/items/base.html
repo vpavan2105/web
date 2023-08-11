@@ -1,0 +1,69 @@
+<doctype html>
+    <html>
+        <head>
+         
+            <title>TRAVEL BOOKING</title>
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+           
+            <style>
+                .button {margin-left:5px;padding:6px;border-radius:8px;border:1px solid rgb(51,51,225);transition-duration:1s;}
+          .button:hover {background-color:rgb(51,51,225);color:white}
+                body   {font-family:georgia;margin:0px;display:grid;grid-template-rows:auto auto auto;align-content: space-between;}
+              .link   {text-decoration:none;border:1px solid rgb(51,51,225);border-radius:3px;color:rgba(24, 245, 255, 0.82);text-align:center;font-size:25px;font-family:lora;background-color:rgba(238, 229, 238, 0.20);transition-duration:1s;}  
+              .link:hover {background-color:rgb(51,51,225);color:white;width:}
+                  form {border:2px solid black;font-family:lora}
+                 .home {display:grid;grid-template-columns:19.5% 19.5% 19.5% 19.5% 19.5%;align-items:center;height:60px;background-color:rgba(19, 22, 21, 1);justify-content:space-between}
+                 .line {padding-left:30px;color:blue}
+          .destination {text-decoration:none;border:1px solid rgb(51,51,225);border-radius:1px 10px 1px 10px; padding:5px;color:black}
+             .content1 {display:grid;grid-template-columns:64% 35%;justify-content:space-between;border:20px solid rgba(238, 229, 238, 0.20);background-color:rgba(51,51,225,0.5)}
+           .img-scroll {overflow:auto;white-space:nowrap;width:200px}
+               .agency {max-width:250px;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);text-align:center;background-color:white}
+      .explore-items   {display:flex;flex-wrap:wrap;justify-content: space-around;padding:5px}
+            .explore   {display:grid;grid-template-columns:45% 50%;justify-content:space-between;height:100%;background-color:rgb(153,153,225)} 
+            .content2  {border:20px solid white;}
+             .links    {text-decoration:none;border:1px solid rgb(51,51,225);border-radius:3px;padding:5px;color:blue;background-color:rgba(153,153,255,0.25); }
+                .book  {display:grid;grid-template-columns:25% 45% 25%;justify-content:center;background-color:rgba(51,51,225,0.5);}
+            </style>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        </head>
+        
+
+        <body>
+            {%if content%}
+                <div>
+               {%block content%}
+               {%load static%}
+               <div class="home">
+                   <a href='/' class="link">HOME</a>
+                   <a href='/agencies/' class="link" >EXPLORE</a>
+                   <a href='/booking/' class="link" >BOOKING</a>
+                   <a href='/about/' class="link" >ABOUT</a>
+                   <a href='/logout/' class="link" >LOGOUT</a>
+                 
+               </div>
+               
+
+               {%endblock content%}
+                </div>
+            {%endif%}    
+            {%if content1%}
+                <div class="content1">
+               {%block content1%}
+
+               {%endblock content1%}
+                </div>
+            {%endif%}    
+            {%if content2%}
+                <div class="content2">
+               {%block content2%}
+
+
+               {%endblock content2%}
+                </div>
+            {%endif%}
+        </body>
+
+    </html>
+

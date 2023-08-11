@@ -1,0 +1,11 @@
+{%extends 'items/base.html'%}
+{%block content%}
+  <div class="form-style">
+    <form method='POST' action='.'>
+        {%csrf_token%}
+        <p>are you sure you want to logout</p>
+        <button class="button" type='submit'>Logout</button>
+     </form> 
+  </div>
+     <p class="line">return to <a href='/' class="links">home</a><p>       
+{%endblock content%}
